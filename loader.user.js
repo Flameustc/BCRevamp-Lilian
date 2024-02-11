@@ -14,7 +14,7 @@
 
 (function () {
     "use strict";
-    const src = `'http://localhost:3042/undefined/Revamp/main.js?v=${Date.now()}`;
+    const src = `https://flameustc.github.io/BCRevamp-Lilian/main.js?v=${Date.now()}`;
     if (typeof BCRevampLilian_Loaded === "undefined") {
         const n = document.createElement("script");
         n.setAttribute("type", "text/javascript");

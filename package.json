@@ -5,8 +5,8 @@
   "author": "Lilian",
   "license": "MIT",
   "scripts": {
-    "build:local": "rollup -c src/rollup.config.js --configDebug --configDeploy 'http://localhost:3042/'",
-    "build": "rollup -c src/rollup.config.js",
+    "build:local": "rollup -c src/rollup.config.js --configDebug --configDeploy http://localhost:3042",
+    "build": "rollup -c src/rollup.config.js --configDeploy https://flameustc.github.io",
     "serve": "http-server ./public -p 3042 --cors"
   },
   "dependencies": {

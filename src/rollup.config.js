@@ -7,7 +7,7 @@ const path = require('path');
 const terser = require("@rollup/plugin-terser");
 
 const config_d = {
-    folder: "Revamp",
+    folder: "BCRevamp-Lilian",
     input: "Revamp.ts",
     output: "main.js",
     loader: "loader.user.js",
@@ -51,14 +51,12 @@ const config_default = {
 module.exports = cliArgs => {
     // gitlab ci is not correctly passing project name
     const deploy = cliArgs.configDeploy;
-    const name = cliArgs.configName;
 
     if(!deploy) throw new Error("No deploy site specified");
 
-    const fix_deploy = deploy.substring(0, deploy.lastIndexOf("/")) + "/" + name;
-    console.log(`Deploying to ${fix_deploy}`);
+    console.log(`Deploying to ${deploy}`);
     if (cliArgs.configDebug === true) {
-        return { ...config_default, plugins: plugins_debug(fix_deploy) };
+        return { ...config_default, plugins: plugins_debug(deploy) };
     }
-    return { ...config_default, plugins: plugins(fix_deploy) };
+    return { ...config_default, plugins: plugins(deploy) };
 };
